@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class WhileLoop {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String correctAnswer = "21";
+        int lives = 0;
+        String userAnswer;
+
+        do {
+            System.out.println("Guess Rami's favorite number from 17 to 25");
+            userAnswer = sc.nextLine();
+
+            if (userAnswer.equals(correctAnswer)) {
+                System.out.println("Congratulations! You've won the game!");
+                break;   
+            } else {
+                lives--;
+                if (lives > 0) {
+                    System.out.println("You have " + lives + " lives remaining. Try again.");
+                } else {
+                    System.out.println("No lives remaining. You've lost the game.");
+                }
+            }
+        } while(lives > 0);
+
+        sc.close();
+    }
+}
