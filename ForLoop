@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class ForLoop{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+       
+        String username [] = {"Rami","Faris","Suleiman", "Muadh"};
+        String password [] = {"123","1234","12345","123456"};
+        
+        System.out.print("enter a Username: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter a Password: ");
+        String pass = sc.nextLine();
+
+        // Initialize a boolean variable to check if the user exists
+        boolean user = false;
+
+       
+        for(int i = 0; i < username.length; i++){
+            // Check if the entered name and password match any in the arrays
+            if(name.equals(username[i]) && pass.equals(password[i])){
+                // If a match is found, set user to true and break the loop
+                user = true;
+                break;
+            }
+        } 
+            
+            if(user){
+                System.out.println("Welcome: " + name);
+            }
+   
+            else{
+                System.out.println("Account not found");
+                
+            }
+
+    sc.close();
+    }
+}
